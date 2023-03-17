@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Front end part</h1>
+    <button id="getPosts">get posts</button>
+
+    <script>
+      document.getElementById('getPosts').addEventListener('click', getPosts);
+      async function getPosts() {
+        try {
+          console.log('getPosts ivyko');
+          const resp = await fetch('http://127.0.0.1:3000/posts');
+          const dataInJs = await resp.json();
+          console.log('dataInJs ===', dataInJs);
+        } catch (error) {
+          console.warn('klaida', error);
+        }
+      }
+    </script>
+  </body>
+</html>
