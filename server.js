@@ -12,7 +12,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts', (req, res) => {
-  res.status(200).json(arr);
+  res.status(201).json(arr);
+});
+app.get('/posts/:id', (req, res) => {
+  res.status(200).json({ msg: 'single post page' });
 });
 
 app.get('*', (req, res) => {
